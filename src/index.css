@@ -1,0 +1,211 @@
+
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+textarea {
+  overflow-wrap: anywhere;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Smooth transitions between themes */
+body,
+nav,
+main,
+input,
+textarea,
+select,
+button,
+article,
+section {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Dark theme base */
+.dark-theme {
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  color-scheme: dark;
+}
+
+/* Navbar, including its translucent background */
+.dark-theme nav {
+  background-color: rgb(30 41 59 / 95%) !important;
+  border-color: #334155 !important;
+}
+
+/* Cards and panels */
+.dark-theme .bg-white {
+  background-color: #1e293b !important;
+}
+
+.dark-theme .bg-slate-50 {
+  background-color: #0f172a !important;
+}
+
+.dark-theme .bg-slate-100 {
+  background-color: #334155 !important;
+}
+
+.dark-theme .border-slate-200 {
+  border-color: #334155 !important;
+}
+
+/* Text colors */
+.dark-theme .text-slate-900,
+.dark-theme .text-slate-800 {
+  color: #f1f5f9 !important;
+}
+
+.dark-theme .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+.dark-theme .text-slate-600,
+.dark-theme .text-slate-500 {
+  color: #cbd5e1 !important;
+}
+
+.dark-theme .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+/* Form fields */
+.dark-theme input:not([type="checkbox"]),
+.dark-theme textarea,
+.dark-theme select {
+  background-color: #0f172a;
+  color: #f1f5f9;
+  border-color: #475569;
+}
+
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+  color: #94a3b8;
+}
+
+.dark-theme select option {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+/* Secondary hover states */
+.dark-theme .hover\:bg-slate-100:hover,
+.dark-theme .hover\:bg-slate-200:hover,
+.dark-theme .hover\:bg-slate-50:hover {
+  background-color: #334155 !important;
+}
+
+.dark-theme .hover\:border-blue-200:hover {
+  border-color: #475569 !important;
+}
+
+/* Priority and icon backgrounds */
+.dark-theme .bg-blue-50 {
+  background-color: #172554 !important;
+}
+
+.dark-theme .bg-amber-50 {
+  background-color: #422006 !important;
+}
+
+.dark-theme .bg-emerald-50 {
+  background-color: #052e16 !important;
+}
+
+.dark-theme .bg-red-50 {
+  background-color: #450a0a !important;
+}
+
+/* Checkbox visibility */
+.dark-theme input[type="checkbox"] {
+  accent-color: #3b82f6;
+}
+
+/* Dialog remains readable in dark mode */
+.dark-theme [role="dialog"] {
+  color: #e2e8f0;
+}
+
+/* Visible keyboard focus */
+:focus-visible {
+  outline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  main {
+    overflow-wrap: break-word;
+  }
+
+  #root input,
+  #root textarea,
+  #root select {
+    font-size: 16px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
